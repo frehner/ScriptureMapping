@@ -10,14 +10,14 @@ import UIKit
 
 class ScriptureViewController : UIViewController, UIWebViewDelegate {
     
-    // MARK: Properties
+    // MARK: - Properties
     var book: Book!
     var chapter = 0
     
-    // MARK: Outlets
+    // MARK: - Outlets
     @IBOutlet weak var webView: UIWebView!
     
-    // MARK: View Controller Lifecycle
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
