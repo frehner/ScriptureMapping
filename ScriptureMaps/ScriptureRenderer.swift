@@ -34,7 +34,7 @@ extension String {
 
 class ScriptureRenderer {
     // MARK: - Constants
-
+    let BASE_URL = "http://scriptures.byu.edu/mapscrip/"
     let FOOTNOTE_VERSE = 1000
 
     // MARK: - Properties
@@ -125,24 +125,11 @@ class ScriptureRenderer {
             let endIndex: String.Index = advance(verseText.startIndex, tagRecord.get(gGeoTagEndOffset))
 
             collectedGeocodedPlaces.append(geoplace)
-            
-            var viewParameters = ""
-
-            if let viewLatitude = geoplace.viewLatitude {
-                let viewLongitude = geoplace.viewLongitude!
-                let viewTilt = geoplace.viewTilt!
-                let viewRoll = geoplace.viewRoll!
-                let viewAltitude = geoplace.viewAltitude!
-                let viewHeading = geoplace.viewHeading!
-
-                viewParameters = "/\(viewLatitude)/\(viewLongitude)/\(viewTilt)/\(viewRoll)/" +
-                                 "\(viewAltitude)/\(viewHeading)"
-            }
-
+           
             // Insert hyperlink for geotag in this verse at the given offsets
+            let encodedPlace = placename.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             verseText = verseText.substringToIndex(startIndex) +
-                "<a href=\"http://scriptures.byu.edu/mapscrip/\(geoplace.id)" +
-                        "/\(placename)/\(geoplace.latitude)/\(geoplace.longitude)\(viewParameters)\">" +
+                "<a href=\"\(BASE_URL)\(geoplace.id)\">" +
                         verseText.substringWithRange(Range<String.Index>(start: startIndex, end: endIndex)) +
                         "</a>" + verseText.substringFromIndex(endIndex)
         }
