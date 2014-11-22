@@ -10,14 +10,14 @@ import UIKit
 
 class VolumesViewController: UITableViewController {
 
-    weak var detailViewController: DetailViewController? = nil
+    weak var detailViewController: MapViewController? = nil
     lazy var volumes = GeoDatabase.sharedGeoDatabase.volumes()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let split = splitViewController {
-            detailViewController = split.viewControllers.last?.topViewController as? DetailViewController
+            detailViewController = split.viewControllers.last?.topViewController as? MapViewController
         }
         
     }

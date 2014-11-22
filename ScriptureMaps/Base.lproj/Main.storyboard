@@ -22,7 +22,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="ScriptureMaps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="MapViewController" customModule="ScriptureMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
@@ -49,6 +49,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
+        </scene>
+        <!--Scripture View Controller-->
+        <scene sceneID="VAk-UV-cdX">
+            <objects>
+                <viewController id="yhz-hH-ytU" customClass="ScriptureViewController" customModule="ScriptureMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7yA-Uu-kuY"/>
+                        <viewControllerLayoutGuide type="bottom" id="dTq-fX-ZYy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7E0-uh-N2f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKM-Kg-vYm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xKM-Kg-vYm" firstAttribute="leading" secondItem="7E0-uh-N2f" secondAttribute="leading" id="IKX-oH-XxB"/>
+                            <constraint firstItem="xKM-Kg-vYm" firstAttribute="top" secondItem="7E0-uh-N2f" secondAttribute="top" id="Ie3-PH-ess"/>
+                            <constraint firstItem="dTq-fX-ZYy" firstAttribute="top" secondItem="xKM-Kg-vYm" secondAttribute="bottom" id="eFT-Sb-9dT"/>
+                            <constraint firstAttribute="trailing" secondItem="xKM-Kg-vYm" secondAttribute="trailing" id="gVM-El-rWa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="xKM-Kg-vYm" id="Up6-TU-eTT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C47-ad-y7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240" y="-630"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -116,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Book Cell" id="oLm-Qn-Y3c">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="oLm-Qn-Y3c">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oLm-Qn-Y3c" id="9Fg-aU-MHc">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -128,6 +161,9 @@
                             <outlet property="delegate" destination="Sjt-3j-STA" id="Fu6-FV-Z4s"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="yhz-hH-ytU" kind="show" identifier="Show Scripture" id="6zn-07-9Ne"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sg7-N9-tgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

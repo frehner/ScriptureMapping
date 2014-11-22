@@ -11,9 +11,10 @@
 		A02C8E061A21081700023FCF /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A02C8DFB1A2107C800023FCF /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A02C8E081A2113D200023FCF /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C8E071A2113D200023FCF /* BooksViewController.swift */; };
 		A02C8E0A1A21179500023FCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02C8E091A21179500023FCF /* MapKit.framework */; };
+		A02C8E0C1A2123E300023FCF /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */; };
 		A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */; };
 		A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */; };
-		A0D5A6B21A20FA4A00DB2C6C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6B11A20FA4A00DB2C6C /* DetailViewController.swift */; };
+		A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */; };
 		A0D5A6B51A20FA4A00DB2C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D5A6B31A20FA4A00DB2C6C /* Main.storyboard */; };
 		A0D5A6B71A20FA4A00DB2C6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D5A6B61A20FA4A00DB2C6C /* Images.xcassets */; };
 		A0D5A6BA1A20FA4A00DB2C6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0D5A6B81A20FA4A00DB2C6C /* LaunchScreen.xib */; };
@@ -88,11 +89,12 @@
 		A02C8DF31A2107C800023FCF /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		A02C8E071A2113D200023FCF /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		A02C8E091A21179500023FCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
 		A0D5A6A81A20FA4A00DB2C6C /* ScriptureMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScriptureMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D5A6AC1A20FA4A00DB2C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesViewController.swift; sourceTree = "<group>"; };
-		A0D5A6B11A20FA4A00DB2C6C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A0D5A6B41A20FA4A00DB2C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0D5A6B61A20FA4A00DB2C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0D5A6B91A20FA4A00DB2C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -230,8 +232,9 @@
 			children = (
 				A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */,
 				A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */,
-				A0D5A6B11A20FA4A00DB2C6C /* DetailViewController.swift */,
+				A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */,
 				A02C8E071A2113D200023FCF /* BooksViewController.swift */,
+				A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -380,11 +383,12 @@
 				A0D5A6D91A20FCC000DB2C6C /* Book.swift in Sources */,
 				A02C8E081A2113D200023FCF /* BooksViewController.swift in Sources */,
 				A0D5A6DB1A20FCC000DB2C6C /* GeoDatabase.swift in Sources */,
-				A0D5A6B21A20FA4A00DB2C6C /* DetailViewController.swift in Sources */,
+				A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */,
 				A0D5A6DE1A20FCC000DB2C6C /* ScriptureRenderer.swift in Sources */,
 				A0D5A6DC1A20FCC000DB2C6C /* GeoPlace.swift in Sources */,
 				A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */,
 				A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */,
+				A02C8E0C1A2123E300023FCF /* ScriptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
