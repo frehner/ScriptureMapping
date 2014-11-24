@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
 
 
     var detailItem: AnyObject? {
@@ -31,15 +34,27 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(40.2506, -111.65247)
+        annotation.title = "Tanner Building"
+        annotation.subtitle = "BYU Campus"
+        
+        mapView.addAnnotation(annotation)
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var camera = MKMapCamera(
+            lookingAtCenterCoordinate: CLLocationCoordinate2DMake(40.2506, -111.65247),
+            fromEyeCoordinate: CLLocationCoordinate2DMake(40.2406, -111.65247),
+            eyeAltitude: 300)
+        mapView.setCamera(camera, animated: animated)
     }
-
 
 }
 
