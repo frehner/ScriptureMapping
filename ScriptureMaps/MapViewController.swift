@@ -15,6 +15,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
+    // MARK: - Actions
+    @IBAction func setMapRegion(sender: AnyObject) {
+        var region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(40.23, -111.62), MKCoordinateSpanMake(5, 5))
+        mapView.setRegion(region, animated: true)
+    }
+    
 
     var detailItem: AnyObject? {
         didSet {
@@ -32,6 +38,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
 
+    // MARK: - ViewCont lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +66,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     // MARK: - Map view delegate
+    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         let reuseIdentifier = "Pin"
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseIdentifier)

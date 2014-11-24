@@ -47,7 +47,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="sUV-4P-zyX">
+                            <connections>
+                                <action selector="setMapRegion:" destination="JEX-9P-axG" id="Rsw-PQ-A24"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="BVl-HU-Adq" id="mee-jp-412"/>
                     </connections>
