@@ -29,10 +29,24 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate {
         
         webView.loadHTMLString(html, baseURL: nil)
         
-        if let splitVC = splitViewController {
-            if let navVC = splitVC.viewControllers.last as? UINavigationController {
-                mapViewController = navVC.topViewController as? MapViewController
-            }
+        configureMapViewController()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureMapViewController()
+    }
+    
+    // MARK: - Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Show Map" {
+            let navVC = segue.destinationViewController as UINavigationController
+            let mapVC = navVC.topViewController as MapViewController
+            
+            //config map view to current context
+            
+            mapVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+            mapVC.navigationItem.leftItemsSupplementBackButton = true
         }
     }
     
@@ -45,12 +59,24 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate {
             
             if let mapVC = mapViewController {
                 NSLog("You have a map view controller")
+            } else {
+                performSegueWithIdentifier("Show Map", sender: self)
             }
             
             return false
         }
         
         return true
+    }
+    
+    // MARK: - Helper funcs
+    func configureMapViewController() {
+        mapViewController = nil
+        if let splitVC = splitViewController {
+            if let navVC = splitVC.viewControllers.last as? UINavigationController {
+                mapViewController = navVC.topViewController as? MapViewController
+            }
+        }
     }
     
 }

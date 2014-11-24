@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="xKM-Kg-vYm" id="Up6-TU-eTT"/>
+                        <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="Show Map" id="iAw-V3-ReB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C47-ad-y7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,4 +195,7 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iAw-V3-ReB"/>
+    </inferredMetricsTieBreakers>
 </document>
