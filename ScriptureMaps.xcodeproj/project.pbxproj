@@ -12,6 +12,7 @@
 		A02C8E081A2113D200023FCF /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C8E071A2113D200023FCF /* BooksViewController.swift */; };
 		A02C8E0A1A21179500023FCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02C8E091A21179500023FCF /* MapKit.framework */; };
 		A02C8E0C1A2123E300023FCF /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */; };
+		A061C22A1A2492E6005024FA /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061C2291A2492E6005024FA /* ChapterViewController.swift */; };
 		A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */; };
 		A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */; };
 		A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */; };
@@ -90,6 +91,7 @@
 		A02C8E071A2113D200023FCF /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		A02C8E091A21179500023FCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
+		A061C2291A2492E6005024FA /* ChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		A0D5A6A81A20FA4A00DB2C6C /* ScriptureMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScriptureMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D5A6AC1A20FA4A00DB2C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */,
 				A02C8E071A2113D200023FCF /* BooksViewController.swift */,
 				A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */,
+				A061C2291A2492E6005024FA /* ChapterViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A061C22A1A2492E6005024FA /* ChapterViewController.swift in Sources */,
 				A0D5A6D91A20FCC000DB2C6C /* Book.swift in Sources */,
 				A02C8E081A2113D200023FCF /* BooksViewController.swift in Sources */,
 				A0D5A6DB1A20FCC000DB2C6C /* GeoDatabase.swift in Sources */,

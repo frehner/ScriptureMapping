@@ -23,7 +23,12 @@ class BooksViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("Show Scripture", sender: self)
+        if books[indexPath.row].numChapters > 1 {
+            performSegueWithIdentifier("Show Chapter", sender: self)
+        } else {
+            performSegueWithIdentifier("Show Scripture", sender: self)
+        }
+        
     }
     
     
@@ -33,9 +38,15 @@ class BooksViewController : UITableViewController {
                 if let destVC = segue.destinationViewController as? ScriptureViewController {
                     destVC.book = books[indexPath.row]
                     
-                    //change this
                     destVC.chapter = 1
                     
+                    destVC.title = books[indexPath.row].tocName
+                }
+            }
+        } else if segue.identifier == "Show Chapter" {
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                if let destVC = segue.destinationViewController as? ChapterViewController {
+                    destVC.book = books[indexPath.row]
                     destVC.title = books[indexPath.row].tocName
                 }
             }

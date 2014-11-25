@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="717" y="915"/>
         </scene>
         <!--Scripture View Controller-->
         <scene sceneID="VAk-UV-cdX">
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C47-ad-y7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="-630"/>
+            <point key="canvasLocation" x="1948" y="150"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -179,11 +179,41 @@
                     </tableView>
                     <connections>
                         <segue destination="yhz-hH-ytU" kind="show" identifier="Show Scripture" id="6zn-07-9Ne"/>
+                        <segue destination="jtO-4k-kAZ" kind="show" identifier="Show Chapter" id="CfR-Sh-WcH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sg7-N9-tgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="-630"/>
+            <point key="canvasLocation" x="1544" y="-680"/>
+        </scene>
+        <!--Chapter View Controller-->
+        <scene sceneID="Ijp-KM-yVR">
+            <objects>
+                <tableViewController id="jtO-4k-kAZ" customClass="ChapterViewController" customModule="ScriptureMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5dy-zM-ZCm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChapterCell" id="7ou-lJ-epv">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ou-lJ-epv" id="oEi-rv-s3c">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jtO-4k-kAZ" id="iPJ-s7-uCO"/>
+                            <outlet property="delegate" destination="jtO-4k-kAZ" id="ww1-hH-p3s"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="yhz-hH-ytU" kind="show" identifier="Show Scripture" id="N92-P7-heK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZ2-JF-gTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336" y="-680"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -198,10 +228,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="-38" y="915"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="iAw-V3-ReB"/>
+        <segue reference="N92-P7-heK"/>
     </inferredMetricsTieBreakers>
 </document>
