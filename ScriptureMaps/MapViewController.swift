@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     // MARK: - Outlets
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -57,7 +57,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         mapView.addAnnotation(annotation)
 
-        
         var camera = MKMapCamera(
             lookingAtCenterCoordinate: CLLocationCoordinate2DMake(40.2506, -111.65247),
             fromEyeCoordinate: CLLocationCoordinate2DMake(40.2406, -111.65247),
@@ -85,6 +84,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         return view
+    }
+    
+    // MARK: - Location manager delegate 
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        let location = locations.last as CLLocation
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
+    
     }
 
 }

@@ -133,7 +133,11 @@ class GeoDatabase {
     //
     func volumes() -> [String] {
         // NEEDSWORK: replace this with code to read the volume titles from the database
-
-        return ["Old Testament", "New Testament", "Book of Mormon", "Doctrine and Covenants", "Pearl of Great Price"]
+        var volumes = [String]()
+        
+        for volume in db["book"].filter(gBookParentBookId == nil) {
+            volumes.append(volume.get(gBookFullName))
+        }
+        return volumes
     }
 }
