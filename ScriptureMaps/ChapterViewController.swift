@@ -19,7 +19,7 @@ class ChapterViewController : UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ChapterCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = "\(book.citeFull) \(indexPath.row + 1)"
+        cell.textLabel?.text = "\(book.citeFull) \(indexPath.row + 1)"
         
         return cell
     }

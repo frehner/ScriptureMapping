@@ -44,7 +44,7 @@ class VolumesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VolumeCell", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel.text = volumes[indexPath.row]
+        cell.textLabel?.text = volumes[indexPath.row]
         return cell
     }
 

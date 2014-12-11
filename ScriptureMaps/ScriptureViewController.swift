@@ -13,6 +13,7 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate {
     // MARK: - Properties
     var book: Book!
     var chapter = 0
+    var geoId:String = ""
     
     weak var mapViewController: MapViewController?
     
@@ -43,6 +44,9 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate {
             let navVC = segue.destinationViewController as UINavigationController
             let mapVC = navVC.topViewController as MapViewController
             
+            mapVC.geoPlaces = ScriptureRenderer.sharedRenderer.collectedGeocodedPlaces
+            mapVC.singleGeoPlaceId = geoId.toInt()!
+            
             //config map view to current context
             
             mapVC.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
@@ -54,13 +58,17 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if request.URL.absoluteString?.rangeOfString(ScriptureRenderer.sharedRenderer.BASE_URL) != nil {
             
-            NSLog("geocoded place \(request)")
+//            NSLog("geocoded place \(request)")
+            
+            var url = indices(ScriptureRenderer.sharedRenderer.BASE_URL)
+            geoId = request.URL.absoluteString!.substringFromIndex(url.endIndex)
             
             if let mapVC = mapViewController {
                 //adjust map to show point at default zoom level. look at id at get it from DB (vid5)
-                NSLog("You have a map view controller")
-            } else {
+//                NSLog("You have a map view controller")
                 performSegueWithIdentifier("Show Map", sender: self)
+            } else {
+                
             }
             
             return false

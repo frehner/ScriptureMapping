@@ -8,17 +8,24 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    // MARK: - Properties
+    var geoPlaces: [GeoPlace] = [GeoPlace]()
+    var singleGeoPlaceId = 0
+    var locationManager : CLLocationManager!
+    
     // MARK: - Outlets
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
     // MARK: - Actions
     @IBAction func setMapRegion(sender: AnyObject) {
-        var region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(40.23, -111.62), MKCoordinateSpanMake(5, 5))
-        mapView.setRegion(region, animated: true)
+//        var region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(40.23, -111.62), MKCoordinateSpanMake(5, 5))
+//        mapView.setRegion(region, animated: true)
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
 
@@ -43,6 +50,49 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var currGeoPlace:GeoPlace? = nil
+        for (key, val) in enumerate(geoPlaces) {
+
+            if val.id == singleGeoPlaceId {
+                currGeoPlace = geoPlaces[key]
+            }
+            
+            var annotation = MKPointAnnotation()
+            var geoplace = geoPlaces[key]
+            
+            annotation.coordinate = CLLocationCoordinate2D(
+                latitude: geoplace.latitude,
+                longitude: geoplace.longitude
+            )
+            
+            annotation.title = geoplace.placename
+            annotation.subtitle = "\(geoplace.latitude), \(geoplace.longitude)"
+            
+            mapView.addAnnotation(annotation)
+        }
+        
+        if currGeoPlace != nil {
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager = CLLocationManager()
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.requestWhenInUseAuthorization()
+                locationManager.startUpdatingLocation()
+                
+                if locationManager.location != nil {
+                    var currentLocationAnnotation = MKPointAnnotation()
+                    currentLocationAnnotation.coordinate = CLLocationCoordinate2D (latitude: locationManager.location.coordinate.latitude, longitude: locationManager.location.coordinate.longitude)
+                    
+                    currentLocationAnnotation.title = "Current Location"
+                    
+                    mapView.addAnnotation(currentLocationAnnotation)
+                    mapView.selectAnnotation(currentLocationAnnotation, animated: true)
+                } else {
+                    NSLog("Problems: Location= \(locationManager.location)")
+                }
+            }
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
@@ -50,18 +100,24 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        var annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(40.2506, -111.65247)
-        annotation.title = "Tanner Building"
-        annotation.subtitle = "BYU Campus"
+        var currentGeoPlace : GeoPlace? = nil
         
-        mapView.addAnnotation(annotation)
+        for (key, val) in enumerate(geoPlaces) {
+            if val.id == singleGeoPlaceId {
+                currentGeoPlace = geoPlaces[key]
+            }
+        }
+        
+        if currentGeoPlace != nil {
+            
+            var camera = MKMapCamera(
+                lookingAtCenterCoordinate: CLLocationCoordinate2D(latitude: currentGeoPlace!.latitude, longitude: currentGeoPlace!.longitude),
+                fromEyeCoordinate: CLLocationCoordinate2D(latitude: currentGeoPlace!.viewLatitude!, longitude: currentGeoPlace!.viewLongitude!),
+                eyeAltitude: currentGeoPlace!.viewAltitude!)
+            
+            mapView.setCamera(camera, animated: true)
+        } 
 
-        var camera = MKMapCamera(
-            lookingAtCenterCoordinate: CLLocationCoordinate2DMake(40.2506, -111.65247),
-            fromEyeCoordinate: CLLocationCoordinate2DMake(40.2406, -111.65247),
-            eyeAltitude: 300)
-        mapView.setCamera(camera, animated: animated)
     }
     
     // MARK: - Map view delegate
@@ -90,10 +146,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         let location = locations.last as CLLocation
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         mapView.setRegion(region, animated: true)
     
     }
 
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        locationManager.stopUpdatingLocation()
+        if error != nil {
+            NSLog("\(error)")
+        }
+    }
 }
 

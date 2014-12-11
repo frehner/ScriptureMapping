@@ -14,7 +14,7 @@ class BooksViewController : UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BookCell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel.text = books[indexPath.row].fullName
+        cell.textLabel?.text = books[indexPath.row].fullName
         return cell
     }
     

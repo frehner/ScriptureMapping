@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let navigationController = splitViewController.viewControllers.last as UINavigationController
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
+        
+//        var extraItems = [AnyObject]
+        var geocodeItem = UIMenuItem(title: "Geocode", action: "suggestGeocoding")
+        
+        UIMenuController.sharedMenuController().menuItems = [UIMenuItem(title: "Geocode", action: "suggestGeocoding")]
+        
         return true
     }
 
