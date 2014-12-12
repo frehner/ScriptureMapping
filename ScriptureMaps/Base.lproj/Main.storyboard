@@ -233,18 +233,18 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="ceH-25-vRM"/>
                                                     <exclude reference="5uo-gK-UYZ"/>
-                                                    <exclude reference="PQX-5k-R8E"/>
                                                     <exclude reference="69h-k0-lTv"/>
                                                     <exclude reference="Olb-9a-bBe"/>
+                                                    <exclude reference="PQX-5k-R8E"/>
+                                                    <exclude reference="ceH-25-vRM"/>
                                                     <exclude reference="eOO-6p-iuK"/>
-                                                    <exclude reference="Jcb-cp-Hua"/>
-                                                    <exclude reference="rcP-v0-A0b"/>
-                                                    <exclude reference="hLS-BU-ljj"/>
-                                                    <exclude reference="EUa-sA-7jJ"/>
                                                     <exclude reference="68K-9L-fpA"/>
+                                                    <exclude reference="EUa-sA-7jJ"/>
+                                                    <exclude reference="Jcb-cp-Hua"/>
                                                     <exclude reference="UVJ-QK-xxW"/>
+                                                    <exclude reference="hLS-BU-ljj"/>
+                                                    <exclude reference="rcP-v0-A0b"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -265,8 +265,8 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="fzP-cj-m9a"/>
                                                             <exclude reference="AKT-JY-APk"/>
+                                                            <exclude reference="fzP-cj-m9a"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
@@ -301,18 +301,18 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Nt8-ZY-XhP"/>
                                                     <exclude reference="AKn-5n-Qg8"/>
+                                                    <exclude reference="Nt8-ZY-XhP"/>
+                                                    <exclude reference="O1L-cC-P9R"/>
                                                     <exclude reference="app-RF-8pr"/>
                                                     <exclude reference="peh-UD-UoW"/>
-                                                    <exclude reference="O1L-cC-P9R"/>
                                                     <exclude reference="s7z-4q-nGw"/>
                                                     <exclude reference="0PY-F4-p2x"/>
+                                                    <exclude reference="DZ2-lp-nGl"/>
                                                     <exclude reference="HmX-w0-Zxn"/>
                                                     <exclude reference="NdE-kf-wUg"/>
-                                                    <exclude reference="tOM-Op-QAt"/>
                                                     <exclude reference="Tp7-Ph-rg2"/>
-                                                    <exclude reference="DZ2-lp-nGl"/>
+                                                    <exclude reference="tOM-Op-QAt"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -370,16 +370,16 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="2ej-VI-coZ"/>
-                                                    <exclude reference="uZh-vE-hSG"/>
+                                                    <exclude reference="3g3-ET-Fjo"/>
                                                     <exclude reference="bEe-wz-CRJ"/>
                                                     <exclude reference="dkv-Hc-DLz"/>
                                                     <exclude reference="iyP-b8-j9b"/>
-                                                    <exclude reference="3g3-ET-Fjo"/>
+                                                    <exclude reference="uZh-vE-hSG"/>
                                                     <exclude reference="Aep-Gt-0Xs"/>
-                                                    <exclude reference="saY-vt-Rqi"/>
                                                     <exclude reference="HYi-JL-ZLw"/>
-                                                    <exclude reference="aLX-88-DbQ"/>
                                                     <exclude reference="P85-Lp-lG4"/>
+                                                    <exclude reference="aLX-88-DbQ"/>
+                                                    <exclude reference="saY-vt-Rqi"/>
                                                     <exclude reference="wwA-IA-A6c"/>
                                                 </mask>
                                             </variation>
@@ -401,8 +401,8 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="OUv-tr-4Ac"/>
                                                             <exclude reference="1ab-tu-XlJ"/>
+                                                            <exclude reference="OUv-tr-4Ac"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
@@ -438,17 +438,17 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="3Qx-aN-ZhK"/>
+                                                    <exclude reference="8Ps-S0-XYO"/>
+                                                    <exclude reference="C6P-kc-dGh"/>
+                                                    <exclude reference="IRs-AE-Xqa"/>
                                                     <exclude reference="lug-Ng-fSL"/>
                                                     <exclude reference="yHh-wm-XW7"/>
-                                                    <exclude reference="C6P-kc-dGh"/>
-                                                    <exclude reference="8Ps-S0-XYO"/>
-                                                    <exclude reference="IRs-AE-Xqa"/>
                                                     <exclude reference="8p6-QK-wWz"/>
                                                     <exclude reference="9Xx-ra-O6L"/>
-                                                    <exclude reference="IS0-Li-WRz"/>
                                                     <exclude reference="CEl-YB-88Q"/>
-                                                    <exclude reference="Z7I-yQ-lJB"/>
+                                                    <exclude reference="IS0-Li-WRz"/>
                                                     <exclude reference="K8T-My-FBn"/>
+                                                    <exclude reference="Z7I-yQ-lJB"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -505,18 +505,18 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="AW0-lO-aeD"/>
                                                     <exclude reference="NoF-Oc-epE"/>
                                                     <exclude reference="Nw8-Tj-fep"/>
                                                     <exclude reference="Pi4-aw-ul7"/>
-                                                    <exclude reference="rlT-L8-PzE"/>
                                                     <exclude reference="VwM-2l-04n"/>
-                                                    <exclude reference="AW0-lO-aeD"/>
-                                                    <exclude reference="IqV-0Z-rQQ"/>
-                                                    <exclude reference="pNq-eR-fMB"/>
-                                                    <exclude reference="Sky-Q0-oE7"/>
-                                                    <exclude reference="9qa-rh-yAZ"/>
-                                                    <exclude reference="tUf-Qf-vSG"/>
+                                                    <exclude reference="rlT-L8-PzE"/>
                                                     <exclude reference="3Ss-7j-0Mx"/>
+                                                    <exclude reference="9qa-rh-yAZ"/>
+                                                    <exclude reference="IqV-0Z-rQQ"/>
+                                                    <exclude reference="Sky-Q0-oE7"/>
+                                                    <exclude reference="pNq-eR-fMB"/>
+                                                    <exclude reference="tUf-Qf-vSG"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -574,17 +574,17 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="HZV-l3-enQ"/>
-                                                    <exclude reference="xuk-co-BMf"/>
-                                                    <exclude reference="QD5-Zc-Fxi"/>
                                                     <exclude reference="IFt-wz-F63"/>
-                                                    <exclude reference="aIQ-IA-Ypz"/>
                                                     <exclude reference="MB0-rH-hwQ"/>
-                                                    <exclude reference="ldx-DT-cMN"/>
+                                                    <exclude reference="QD5-Zc-Fxi"/>
+                                                    <exclude reference="aIQ-IA-Ypz"/>
+                                                    <exclude reference="xuk-co-BMf"/>
                                                     <exclude reference="Exo-Hz-7xn"/>
-                                                    <exclude reference="cNh-X7-KgZ"/>
                                                     <exclude reference="P4n-yZ-IcO"/>
-                                                    <exclude reference="xL6-vK-Arv"/>
                                                     <exclude reference="Yu8-nk-JBs"/>
+                                                    <exclude reference="cNh-X7-KgZ"/>
+                                                    <exclude reference="ldx-DT-cMN"/>
+                                                    <exclude reference="xL6-vK-Arv"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -641,18 +641,18 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="D8a-YI-v5h"/>
                                                     <exclude reference="Bif-8t-DaF"/>
-                                                    <exclude reference="tcx-mE-zLv"/>
-                                                    <exclude reference="KMJ-cY-Jse"/>
-                                                    <exclude reference="yeS-8x-pPd"/>
+                                                    <exclude reference="D8a-YI-v5h"/>
                                                     <exclude reference="DTE-Na-gin"/>
+                                                    <exclude reference="KMJ-cY-Jse"/>
+                                                    <exclude reference="tcx-mE-zLv"/>
+                                                    <exclude reference="yeS-8x-pPd"/>
                                                     <exclude reference="DBg-8Y-fmE"/>
                                                     <exclude reference="DbP-3j-kIf"/>
-                                                    <exclude reference="hGI-pg-ADG"/>
-                                                    <exclude reference="VJu-nW-U1O"/>
-                                                    <exclude reference="w2R-bZ-ER2"/>
                                                     <exclude reference="Ndj-TN-49l"/>
+                                                    <exclude reference="VJu-nW-U1O"/>
+                                                    <exclude reference="hGI-pg-ADG"/>
+                                                    <exclude reference="w2R-bZ-ER2"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -677,6 +677,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="latitude" destination="Xw3-Eg-iPM" id="BAE-Wv-GXq"/>
+                        <outlet property="longitude" destination="AhZ-Rb-JeT" id="s2n-5U-zhR"/>
+                        <outlet property="viewAltitude" destination="khZ-sr-od8" id="hMV-pI-z4M"/>
+                        <outlet property="viewHeading" destination="qAB-Ol-zpj" id="zSp-Am-LPE"/>
+                        <outlet property="viewLatitude" destination="921-wO-d4h" id="s7J-bg-BE7"/>
+                        <outlet property="viewLongitude" destination="aoj-Zu-XhY" id="Q82-w6-OL9"/>
+                        <outlet property="viewRoll" destination="a0l-jL-Tf0" id="5PI-k5-vep"/>
+                        <outlet property="viewTilt" destination="LhE-41-PPb" id="L2H-Fl-z0z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5h-8l-1aV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Swh-of-7aH" userLabel="Exit" sceneMemberID="exit"/>

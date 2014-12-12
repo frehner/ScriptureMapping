@@ -9,6 +9,17 @@
 import UIKit
 
 class FormTableViewController : UITableViewController, UITextFieldDelegate{
+    // MARK: - Outlets
+    @IBOutlet weak var latitude: UITextField!
+    @IBOutlet weak var longitude: UITextField!
+    @IBOutlet weak var viewLatitude: UITextField!
+    @IBOutlet weak var viewLongitude: UITextField!
+    @IBOutlet weak var viewTilt: UITextField!
+    @IBOutlet weak var viewRoll: UITextField!
+    @IBOutlet weak var viewAltitude: UITextField!
+    @IBOutlet weak var viewHeading: UITextField!
+    
+    
     // MARK: - Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()

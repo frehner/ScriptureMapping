@@ -19,6 +19,9 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate, SuggestionD
     
     weak var mapViewController: MapViewController?
     
+    var placeName:String! = ""
+    var offset:String! = ""
+    
     // MARK: - Outlets
     @IBOutlet weak var webView: ScriptureWebView!
     
@@ -82,7 +85,9 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate, SuggestionD
     }
     
     // MARK: - Suggestion Display Delegate
-    func displaySuggestionDialog() {
+    func displaySuggestionDialog(placeName:String, _ offset:String) {
+        self.placeName = placeName.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        self.offset = offset
         performSegueWithIdentifier("ShowSuggestionDialog", sender: self)
     }
     
@@ -100,6 +105,8 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate, SuggestionD
     @IBAction func saveSuggestion(segue:UIStoryboardSegue) {
          //save model from presented view controller
         
+        let formTVC = segue.sourceViewController as FormTableViewController
+        
         //save to server
         dispatch_async(backgroundQueue) {
             var sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
@@ -110,7 +117,10 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate, SuggestionD
             sessionConfig.HTTPMaximumConnectionsPerHost = 2
             
             var session = NSURLSession(configuration: sessionConfig)
-            var request = NSURLRequest(URL: NSURL(string: "http://scriptures.byu.edu/mapscrip/suggestpm.php?")!)
+            
+            var reqUrl = NSURL(string: "http://scriptures.byu.edu/mapscrip/suggestpm.php?placename=\(self.placeName)&offset=\(self.offset)&latitude=\(formTVC.latitude.text)&longitude=\(formTVC.longitude.text)&viewLatitude=\(formTVC.viewLatitude.text)&viewLongitude=\(formTVC.viewLongitude.text)&viewTilt=\(formTVC.viewTilt.text)&viewRoll=\(formTVC.viewRoll.text)&viewAltitude=\(formTVC.viewAltitude.text)&viewHeading=\(formTVC.viewHeading.text)&bookId=\(self.book.id)&chapter=\(self.chapter)")
+            NSLog("here's the url: \(reqUrl!)")
+            var request = NSURLRequest(URL: reqUrl!)
             
             var task = session.dataTaskWithRequest(request) {
                 (data: NSData!, response:NSURLResponse!, error:NSError!) in
@@ -154,6 +164,10 @@ class ScriptureViewController : UIViewController, UIWebViewDelegate, SuggestionD
             }
             
             task.resume()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.dismissViewControllerAnimated(true, completion: nil )
+            }
         }
     }
     

@@ -9,6 +9,8 @@
 import Foundation
 import SQLite
 
+// MARK: - String extension
+
 extension String {
     mutating func convertToHtmlEntities() -> String {
         self.replaceAllSubstrings([
@@ -32,10 +34,13 @@ extension String {
     }
 }
 
+// MARK: - ScriptureRenderer class
+
 class ScriptureRenderer {
     // MARK: - Constants
-    let BASE_URL = "http://scriptures.byu.edu/mapscrip/"
+
     let FOOTNOTE_VERSE = 1000
+    let BASE_URL = "http://scriptures.byu.edu/mapscrip/"
 
     // MARK: - Properties
 
@@ -112,12 +117,15 @@ class ScriptureRenderer {
             page += "</div>"
         }
 
-        page += "</div></body></html>"
+        let scriptPath = NSBundle.mainBundle().pathForResource("geocode", ofType: "js")!
+        let script = NSString(contentsOfFile: scriptPath, encoding: NSUTF8StringEncoding, error: nil)!
+
+        page += "</div></body><script type=\"text/javascript\">\(script)</script></html>"
 
         return page.convertToHtmlEntities()
     }
 
-    func geocodedTextForVerseText(var verseText: String, _ scriptureId: Int) -> String {
+    private func geocodedTextForVerseText(var verseText: String, _ scriptureId: Int) -> String {
         for tagRecord in GeoDatabase.sharedGeoDatabase.geoTagsForScriptureId(scriptureId) {
             let geoplace = GeoPlace(fromRow: tagRecord)
             let placename = geoplace.placename.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
@@ -125,11 +133,24 @@ class ScriptureRenderer {
             let endIndex: String.Index = advance(verseText.startIndex, tagRecord.get(gGeoTagEndOffset))
 
             collectedGeocodedPlaces.append(geoplace)
-           
+            
+            var viewParameters = ""
+
+            if let viewLatitude = geoplace.viewLatitude {
+                let viewLongitude = geoplace.viewLongitude!
+                let viewTilt = geoplace.viewTilt!
+                let viewRoll = geoplace.viewRoll!
+                let viewAltitude = geoplace.viewAltitude!
+                let viewHeading = geoplace.viewHeading!
+
+                viewParameters = "/\(viewLatitude)/\(viewLongitude)/\(viewTilt)/\(viewRoll)/" +
+                                 "\(viewAltitude)/\(viewHeading)"
+            }
+
             // Insert hyperlink for geotag in this verse at the given offsets
-            let encodedPlace = placename.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             verseText = verseText.substringToIndex(startIndex) +
-                "<a href=\"\(BASE_URL)\(geoplace.id)\">" +
+                "<a href=\"\(BASE_URL)\(geoplace.id)" +
+                        "/\(placename)/\(geoplace.latitude)/\(geoplace.longitude)\(viewParameters)\">" +
                         verseText.substringWithRange(Range<String.Index>(start: startIndex, end: endIndex)) +
                         "</a>" + verseText.substringFromIndex(endIndex)
         }
