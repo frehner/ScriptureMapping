@@ -10,6 +10,15 @@ import Foundation
 import SQLite
 
 class GeoPlace {
+    init(placename: String) {
+        id = 0
+        self.placename = placename
+        latitude = 0.0
+        longitude = 0.0
+        flag = .None
+        category = .ChurchHistory
+    }
+    
     enum GeoCategory: Int {
         // Categories represent geocoded places we've constructed from various
         // Church history sources (1) or the Open Bible project (2)

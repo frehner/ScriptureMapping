@@ -14,6 +14,7 @@
 		A0B1C05E1A3A14D000DF3322 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B1C0551A3A134B00DF3322 /* SQLite.framework */; };
 		A0B1C05F1A3A14ED00DF3322 /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0B1C0551A3A134B00DF3322 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0B1C0611A3A89D000DF3322 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1C0601A3A89D000DF3322 /* FormTableViewController.swift */; };
+		A0B1C0691A3A9BEA00DF3322 /* ScriptureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1C0681A3A9BEA00DF3322 /* ScriptureRenderer.swift */; };
 		A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */; };
 		A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */; };
 		A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */; };
@@ -26,7 +27,6 @@
 		A0D5A6DB1A20FCC000DB2C6C /* GeoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6D51A20FCC000DB2C6C /* GeoDatabase.swift */; };
 		A0D5A6DC1A20FCC000DB2C6C /* GeoPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6D61A20FCC000DB2C6C /* GeoPlace.swift */; };
 		A0D5A6DD1A20FCC000DB2C6C /* scripture.css in Resources */ = {isa = PBXBuildFile; fileRef = A0D5A6D71A20FCC000DB2C6C /* scripture.css */; };
-		A0D5A6DE1A20FCC000DB2C6C /* ScriptureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6D81A20FCC000DB2C6C /* ScriptureRenderer.swift */; };
 		A0F4B98B1A2F654600889049 /* ScriptureWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4B98A1A2F654600889049 /* ScriptureWebView.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +95,7 @@
 		A061C2291A2492E6005024FA /* ChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		A0B1C04D1A3A134B00DF3322 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		A0B1C0601A3A89D000DF3322 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		A0B1C0681A3A9BEA00DF3322 /* ScriptureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureRenderer.swift; sourceTree = "<group>"; };
 		A0D5A6A81A20FA4A00DB2C6C /* ScriptureMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScriptureMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D5A6AC1A20FA4A00DB2C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		A0D5A6D51A20FCC000DB2C6C /* GeoDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoDatabase.swift; sourceTree = "<group>"; };
 		A0D5A6D61A20FCC000DB2C6C /* GeoPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoPlace.swift; sourceTree = "<group>"; };
 		A0D5A6D71A20FCC000DB2C6C /* scripture.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = scripture.css; sourceTree = "<group>"; };
-		A0D5A6D81A20FCC000DB2C6C /* ScriptureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureRenderer.swift; sourceTree = "<group>"; };
 		A0F4B98A1A2F654600889049 /* ScriptureWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,10 +226,10 @@
 		A0D5A6D11A20FA9900DB2C6C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0B1C0681A3A9BEA00DF3322 /* ScriptureRenderer.swift */,
 				A0D5A6D31A20FCC000DB2C6C /* Book.swift */,
 				A0D5A6D51A20FCC000DB2C6C /* GeoDatabase.swift */,
 				A0D5A6D61A20FCC000DB2C6C /* GeoPlace.swift */,
-				A0D5A6D81A20FCC000DB2C6C /* ScriptureRenderer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 				A02C8E081A2113D200023FCF /* BooksViewController.swift in Sources */,
 				A0D5A6DB1A20FCC000DB2C6C /* GeoDatabase.swift in Sources */,
 				A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */,
-				A0D5A6DE1A20FCC000DB2C6C /* ScriptureRenderer.swift in Sources */,
 				A0D5A6DC1A20FCC000DB2C6C /* GeoPlace.swift in Sources */,
+				A0B1C0691A3A9BEA00DF3322 /* ScriptureRenderer.swift in Sources */,
 				A0B1C0611A3A89D000DF3322 /* FormTableViewController.swift in Sources */,
 				A0F4B98B1A2F654600889049 /* ScriptureWebView.swift in Sources */,
 				A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */,
