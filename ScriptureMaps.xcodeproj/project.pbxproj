@@ -13,6 +13,7 @@
 		A061C22A1A2492E6005024FA /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A061C2291A2492E6005024FA /* ChapterViewController.swift */; };
 		A0B1C05E1A3A14D000DF3322 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B1C0551A3A134B00DF3322 /* SQLite.framework */; };
 		A0B1C05F1A3A14ED00DF3322 /* SQLite.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0B1C0551A3A134B00DF3322 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0B1C0611A3A89D000DF3322 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1C0601A3A89D000DF3322 /* FormTableViewController.swift */; };
 		A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */; };
 		A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6AF1A20FA4A00DB2C6C /* VolumesViewController.swift */; };
 		A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5A6B11A20FA4A00DB2C6C /* MapViewController.swift */; };
@@ -93,6 +94,7 @@
 		A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
 		A061C2291A2492E6005024FA /* ChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		A0B1C04D1A3A134B00DF3322 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		A0B1C0601A3A89D000DF3322 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 		A0D5A6A81A20FA4A00DB2C6C /* ScriptureMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScriptureMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D5A6AC1A20FA4A00DB2C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D5A6AD1A20FA4A00DB2C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				A02C8E071A2113D200023FCF /* BooksViewController.swift */,
 				A02C8E0B1A2123E300023FCF /* ScriptureViewController.swift */,
 				A061C2291A2492E6005024FA /* ChapterViewController.swift */,
+				A0B1C0601A3A89D000DF3322 /* FormTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				A0D5A6B21A20FA4A00DB2C6C /* MapViewController.swift in Sources */,
 				A0D5A6DE1A20FCC000DB2C6C /* ScriptureRenderer.swift in Sources */,
 				A0D5A6DC1A20FCC000DB2C6C /* GeoPlace.swift in Sources */,
+				A0B1C0611A3A89D000DF3322 /* FormTableViewController.swift in Sources */,
 				A0F4B98B1A2F654600889049 /* ScriptureWebView.swift in Sources */,
 				A0D5A6B01A20FA4A00DB2C6C /* VolumesViewController.swift in Sources */,
 				A0D5A6AE1A20FA4A00DB2C6C /* AppDelegate.swift in Sources */,

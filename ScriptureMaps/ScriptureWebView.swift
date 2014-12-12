@@ -8,14 +8,20 @@
 
 import UIKit
 
+protocol SuggestionDisplayDelegate {
+    func displaySuggestionDialog()
+}
+
 class ScriptureWebView : UIWebView {
+    var suggestionDelegate: SuggestionDisplayDelegate!
+    
     func suggestGeocoding(sender: AnyObject?){
-        // NEEDSWORK: replace with code to exex segue
-        stringByEvaluatingJavaScriptFromString("document.execCommand('Geocode')")
+        // NEEDSWORK: replace with code to exec segue
+        suggestionDelegate.displaySuggestionDialog()
     }
     
     override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-        if action == "suggestGeocoding" {
+        if action == "suggestGeocoding:" {
             return true
         } else {
             return super.canPerformAction(action, withSender: sender)
